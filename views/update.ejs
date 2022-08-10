@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="main p-5">
+    <h3 class="inline-block rounded-md bg-indigo-500 text-2xl text-white w-full py-2 px-3 text-center w-[50%]">Edit Shinobi Info</h3>
+    <div class="form w-[50%]">
+        <form action="/shinobi/update/<%= data._id %>" method="post">
+            <div class="mt-3">
+                <label class="block mb-2 px-2" for="name">Name</label>
+                <input value="<%= data.name %>" class="w-full py-3 px-2 focus:outline-none shadow-md border-2 border-gray-200 rounded" type="text" placeholder="Shinobi Name" name="name" id="">
+            </div>
+            <div class="mt-3">
+                <label class="block mb-2 px-2" for="name">Age</label>
+                <input value="<%= data.age %>" class="w-full py-3 px-2 focus:outline-none shadow-md border-2 border-gray-200 rounded" type="number" placeholder="Shinobi Age" name="age" id="">
+            </div>
+            <div class="mt-3">
+                <label class="block mb-2 px-2" for="name">Clan</label>
+                <input value="<%= data.clan %>" class="w-full py-3 px-2 focus:outline-none shadow-md border-2 border-gray-200 rounded" type="text" placeholder="Shinobi Clan" name="clan" id="">
+            </div>
+            <div class="mt-3">
+                <label class="block mb-2 px-2" for="name">Chakra Nature</label>
+                <input value="<%= data.cn %>" class="w-full py-3 px-2 focus:outline-none shadow-md border-2 border-gray-200 rounded" type="text" placeholder="Shinobi Chakra Nature" name="cn" id="">
+            </div>
+            <div class="mt-3">
+                <label class="block mb-2 px-2" for="name">Active</label>
+                <select value="<%= data.active %>" id="countries" name="active" class="w-full focus:outline-none shadow-md py-3 px-2 border-2 border-gray-200 text-gray-900 text-sm block w-full">
+                    <option selected>true</option>
+                    <option value="false">false</option>
+                  </select>
+                <!-- <input class="w-full py-3 px-2 focus:underline-none shadow-md border-2 border-gray-200 rounded" type="radio" placeholder="Shinobi Age" name="age" id=""> -->
+            </div>
+            <div class="mt-10">
+                <input type="submit" value="Update" class="bg-green-500 hover:bg-green-400 px-5 py-2 text-white rounded">
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

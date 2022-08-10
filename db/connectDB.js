@@ -6,11 +6,11 @@ const connectDB = async(url) =>{
         const db_options = {
             user: 'prince',
             pass: '123456',
-            dbName: 'schooldb',
+            dbName: 'narutodb',
             authSource: 'admin'
         }
         await mongoose.connect(url, db_options);
-        console.log('Successfully Connected........');
+        console.log(`Successfully Connected to ${db_options.dbName}........`);
     } catch (error) {
         console.log(error);
     }
